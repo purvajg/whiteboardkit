@@ -47,7 +47,9 @@ class SketchStreamController extends WhiteboardController {
   }
 
   void addChunk(DrawChunk drawChunk) {
+    print("drawChunk in addChunk : $drawChunk");
     if (drawChunk.id == 0) {
+      print("drawChunk in if : $drawChunk");
       // animator?.updateSize(availbleSize.width, availbleSize.height);
       this.draw = WhiteboardDraw.empty(
           width: drawChunk.draw.width, height: drawChunk.draw.height);
@@ -57,11 +59,14 @@ class SketchStreamController extends WhiteboardController {
       // Future.delayed(Duration(seconds: 5),(){
       sizeChangedController.sink.add(this.draw.getSize());
       // });
-    } else {}
+    } else {print("drawChunk in else : $drawChunk");}
+    print("drawChunk outside : $drawChunk");
+    print("animator before : $animator");
     animator?.addChunk(drawChunk);
     // if (drawChunk.id == 0) {
     //   initializeSize(availbleSize.width, availbleSize.height);
     // }
+    print("animator after : $animator");
   }
 
   skip() => animator.skip();

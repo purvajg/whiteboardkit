@@ -26,6 +26,8 @@ class DrawChunkAnimator extends DrawAnimator {
   }
 
   addChunk(DrawChunk drawChunk) async {
+    print("drawChunk in addchunk in draw_chunk: ${drawChunk}");
+    print("availbleSize in addchunk : ${availbleSize}");
     if (drawChunk.id == 0) {
       _serializedChunks.clear();
       this.finalDraw = WhiteboardDraw.empty(
