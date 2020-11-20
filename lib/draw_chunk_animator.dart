@@ -26,7 +26,7 @@ class DrawChunkAnimator extends DrawAnimator {
   }
 
   addChunk(DrawChunk drawChunk) async {
-    print("drawChunk in addchunk in draw_chunk: ${drawChunk}");
+    print("drawChunk in addchunk in draw_chunk: ${drawChunk.id}");
     print("availbleSize in addchunk : ${availbleSize}");
     if(availbleSize == null) availbleSize = new Size(drawChunk.draw.width, drawChunk.draw.height);
     if (drawChunk.id == 0) {
